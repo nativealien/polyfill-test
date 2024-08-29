@@ -8,7 +8,7 @@ function App() {
   const [tezKey, setTezKey] = useState<any>(null)
 
   const Tezos = new TezosToolkit("https://ghostnet.smartpy.io")
-  const loadWallet = async (check: boolean) => {
+  const loadWallet = async () => {
         const newWallet = new BeaconWallet({ name: "PolyTest",
                                              network: {
                                                  type: NetworkType.GHOSTNET }})
@@ -26,7 +26,7 @@ function App() {
       height: "50px",
       width: "150px"}}
       onClick={ () =>
-        loadWallet(true)
+        loadWallet()
       }>Connect Tezos</button>
       {tezKey && <p>{tezKey}</p>}
 
